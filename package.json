@@ -1,0 +1,15 @@
+{
+    "name": "devops-portfolio-project",
+    "version": "1.0.0",
+    "description": "DevOps Node.js project with Docker and CI",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "author": "Saransh Mishra",
+    "license": "MIT",
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+  }
+  
