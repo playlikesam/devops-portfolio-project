@@ -2,98 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DevOps D Portfolio Project</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevOps Portfolio Project Guide</title>
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
       font-family: 'Poppins', sans-serif;
-      color: #222;
       line-height: 1.6;
-    }
-
-    #bg-video {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
-      object-fit: cover;
-      opacity: 0.15;
-    }
-
-    .content {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 2rem;
-      margin: 4rem auto;
-      max-width: 900px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-
-    h2 {
-      margin-top: 2rem;
-      color: #444;
-    }
-
-    code {
+      padding: 20px;
       background: #f4f4f4;
+      color: #333;
+    }
+    h1, h2 {
+      color: #ffffff;
+    }
+    code {
+      background-color: #000000;
       padding: 2px 6px;
       border-radius: 4px;
-      font-size: 0.95em;
+      font-family: 'Courier New', monospace;
     }
-
     pre {
-      background: #f8f8f8;
-      padding: 1rem;
+      background-color: #383434;
+      padding: 10px;
+      border-radius: 6px;
       overflow-x: auto;
-      border-left: 5px solid #4caf50;
-      margin-top: 1rem;
-      border-radius: 8px;
+    }
+    ul {
+      padding-left: 20px;
     }
   </style>
 </head>
-<body>
-  <video autoplay muted loop id="bg-video">
-    <source src="liveWallpaperSaransh.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+<body style="background: #000000; color:#ffffff">
 
-  <div class="content">
-    <h1>DevOps Portfolio Project</h1>
+  <h1>🚀 DevOps Portfolio Project Guide</h1>
 
-    <p>This project demonstrates a beginner-friendly DevOps workflow using <strong>GitHub Codespaces</strong>, <strong>Docker</strong>, and <strong>GitHub Actions</strong>. It was created to help learners understand how CI/CD pipelines, containerization, and cloud-based development environments work together.</p>
+  <p>This guide provides an overview of the tools and commands used to build and deploy a simple Node.js application using GitHub Codespaces, Docker, and GitHub Actions. It is designed for beginners learning DevOps practices.</p>
 
-    <h2>🔧 Why We Used GitHub & Docker</h2>
-    <p><strong>GitHub Codespaces</strong> allows us to develop directly in the browser with no local setup. We used it to edit and run our code seamlessly. <strong>Docker</strong> was used to containerize our application, making it portable and consistent across all environments.</p>
+  <h2>🌐 Why GitHub and Codespaces?</h2>
+  <ul>
+    <li><strong>GitHub:</strong> Provides version control, remote repository, GitHub Actions (for CI/CD), and public sharing.</li>
+    <li><strong>Codespaces:</strong> Offers a browser-based development environment with terminal access — no need to install anything locally.</li>
+  </ul>
 
-    <h2>📦 Key Docker Commands</h2>
-    <pre><code>docker build -t devops-portfolio .</code></pre>
-    <pre><code>docker run -p 3000:3000 devops-portfolio</code></pre>
+  <h2>🐳 Why Docker?</h2>
+  <p>Docker allows packaging your application with all its dependencies into a container. This ensures it runs the same way in any environment — perfect for DevOps!</p>
 
-    <p>These commands helped us package and run our Node.js app inside a container, ensuring it behaves the same no matter where it runs.</p>
+  <h2>⚙️ Docker Commands Used</h2>
+  <pre>
+# Build Docker image
+docker build -t devops-portfolio .
 
-    <h2>🔁 CI/CD with GitHub Actions</h2>
-    <p>We created a GitHub Actions workflow file that runs our tests and checks the build every time we push changes. This ensures that our project is always in a working state — a key aspect of <strong>CI/CD (Continuous Integration/Continuous Deployment)</strong>.</p>
+# Run Docker container
+docker run -p 3000:3000 devops-portfolio
 
-    <h2>🌐 Deployment</h2>
-    <p>We deployed this documentation page using <strong>GitHub Pages</strong>. After moving this <code>index.html</code> file to a <code>docs</code> folder and enabling Pages in the repository settings, it went live at:</p>
-    <p><a href="https://playlikesam.github.io/devops-portfolio-project/" target="_blank">https://playlikesam.github.io/devops-portfolio-project/</a></p>
+# View running containers
+docker ps
 
-    <p>This makes the project easy to share, view, and use as a study material for others.</p>
-  </div>
+# Stop container (from terminal, press Ctrl + C or use docker stop)
+  </pre>
+
+  <h2>✅ GitHub Actions - CI/CD Pipeline</h2>
+  <p>We created a workflow file <code>.github/workflows/ci.yml</code> to automatically run tests when code is pushed. This mimics Continuous Integration (CI) in real-world projects.</p>
+
+  <h2>📦 Deployment (Locally)</h2>
+  <ol>
+    <li>Build Docker image: <code>docker build -t devops-portfolio .</code></li>
+    <li>Run it locally: <code>docker run -p 3000:3000 devops-portfolio</code></li>
+    <li>Open browser at <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></li>
+  </ol>
+
+  <h2>📘 Summary</h2>
+  <ul>
+    <li>Used GitHub for code hosting and GitHub Actions for CI.</li>
+    <li>Used Docker for consistent environment setup.</li>
+    <li>Used Codespaces for a quick cloud development setup.</li>
+    <li>Added a badge to showcase build status.</li>
+  </ul>
+
+  <p>✨ This project is beginner-friendly and can be added to your portfolio to show understanding of real-world DevOps workflows.</p>
+
 </body>
 </html>
